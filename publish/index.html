@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="generator" content="Silex v2.2.7">
+
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery-ui.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/pageable.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/front-end.css" data-silex-static="">
+    <style type="text/css" class="silex-style">
+        div.hero-bottom {
+            top: auto;
+            bottom: 30px;
+        }
+        
+        body {
+            font-family: arial, sans-serif;
+            font-size: 19px;
+            padding: 0 !important;
+            /* no white spoace at the top in mobile */
+        }
+        
+        h1 {
+            font-size: 70px;
+            font-weight: 100;
+            line-height: .8;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-weight: 100;
+            line-height: 1.5;
+        }
+        
+        .bg-grad {
+            background: #82c2ed;
+            background: -moz-linear-gradient(-45deg, #82c2ed 0, #a381ee 100%);
+            background: -webkit-linear-gradient(-45deg, #82c2ed 0, #a381ee 100%);
+            background: linear-gradient(135deg, #82c2ed 0, #a381ee 100%);
+        }
+        
+        .bg-grad2 {
+            background: #8adbdb;
+            background: -moz-linear-gradient(-45deg, #8adbdb 0, #344e9b 100%);
+            background: -webkit-linear-gradient(-45deg, #8adbdb 0, #344e9b 100%);
+            background: linear-gradient(135deg, #8adbdb 0, #344e9b 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8adbdb', endColorstr='#344e9b', GradientType=1);
+        }
+        
+        .scroll-down {
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" class="silex-script">
+        function fullHeight() {
+            var RATIO = 1; // 3/4
+            if($(window).width() < 480) return;
+            $('.hero').each(function() {
+                // get section content (for sections only)
+                var sectionContent = $(this).find('.silex-element-content');
+                // if this is a section, get its content container's min-height and apply it to the section
+                // so that the section has a minimum height
+                var minHeight = sectionContent.length ? sectionContent.css('min-height') : '';
+                $(this).css({
+                    'height': $(window).height()*RATIO,
+                    'min-height': minHeight
+                });
+            });
+            $('.hero-centered').each(function() {
+                var minHeight = $(this).css('min-height');
+                $(this).css({
+                    'top': '50%',
+                    'margin-top': Math.round(-parseInt(minHeight) / 2) + 'px'
+                });
+            });
+        }
+        $(window).resize(fullHeight);
+        $(window).ready(fullHeight);
+    $(window).ready(function() {
+        $('.scroll-down').click(function() {
+            var container = $('html,body'),
+            scrollTo = $('.fold');
+        container.animate({
+            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+        });
+        });
+    });
+    
+    
+    
+    
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+/*
+ * animation widget from here: https://github.com/silexlabs/Silex/issues/443
+ */
+$(function() {
+    if(!isMobile) {
+        window.sr = ScrollReveal({
+            distance: '100px'
+        });
+        sr.reveal('.from-left', { origin:  'left'});
+        sr.reveal('.from-right', { origin:  'right'});
+        sr.reveal('.from-top', { origin:  'top'});
+        sr.reveal('.from-bottom', { origin:  'bottom'});
+    }
+})
+    </script>
+    <style class="silex-inline-styles" type="text/css">
+        .body-initial {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .silex-id-1501830434063-20 {
+            top: 5px;
+            left: 5px;
+            background-color: rgba(163, 205, 255, 1);
+        }
+        
+        .silex-id-1501830434061-19 {
+            min-height: 787px;
+        }
+        
+        .silex-id-1501830652625-21 {
+            width: 712px;
+            min-height: 670px;
+            top: 45px;
+            left: 320px;
+        }
+        
+        .silex-id-1501830699625-23 {
+            min-height: 211px;
+            width: 494px;
+            top: 294px;
+            left: 16px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1501830699625-23 {
+                top: 16px;
+                left: 11px;
+                width: 401px;
+                min-height: 267px;
+            }
+        }
+        
+        .silex-id-1484655890366-24 {
+            min-height: 30px;
+            width: 30px;
+            top: 744px;
+            left: 466px;
+        }
+        
+        .silex-id-1501831890737-42 {
+            min-height: 63px;
+            width: 192px;
+            top: 513px;
+            left: 70px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #63b2d8;
+        }
+        
+        .silex-id-1501831890744-43 {
+            min-height: 63px;
+            width: 192px;
+            top: 584px;
+            left: 71px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #63b2d8;
+        }
+        
+        .silex-id-1484587463012-11 {
+            min-height: 100px;
+            top: 669px;
+            left: 0px;
+        }
+        
+        .silex-id-1484587463012-10 {
+            min-height: 331px;
+            background-color: transparent;
+        }
+        
+        .silex-id-1501830251095-16 {
+            width: 305px;
+            min-height: 290px;
+            top: 22px;
+            left: 661px;
+        }
+        
+        .silex-id-1484589600542-14 {
+            min-height: 162px;
+            width: 530px;
+            top: 99px;
+            left: 28px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484589600542-14 {
+                top: 2px;
+                left: 11px;
+                width: 423px;
+                min-height: 115px;
+            }
+        }
+        
+        .silex-id-1484590211530-22 {
+            min-height: 100px;
+            top: 1000px;
+            left: 0px;
+            background-color: rgba(245, 245, 245, 1);
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484590211530-22 {
+                top: 1346px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484590211529-21 {
+            min-height: 485px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484590211529-21 {
+                min-height: 670px;
+            }
+        }
+        
+        .silex-id-1501830809918-25 {
+            width: 400px;
+            min-height: 348px;
+            top: 61px;
+            left: 67px;
+        }
+        
+        .silex-id-1484658276174-26 {
+            min-height: 331px;
+            width: 473px;
+            top: 67px;
+            left: 489px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658276174-26 {
+                top: 279px;
+                left: 11px;
+                width: 423px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484658633791-29 {
+            min-height: 100px;
+            top: 1598px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658633791-29 {
+                top: 2016px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484658633790-28 {
+            min-height: 1160px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658633790-28 {
+                min-height: 1425px;
+            }
+        }
+        
+        .silex-id-1501830903145-26 {
+            width: 400px;
+            min-height: 217px;
+            top: 194px;
+            left: 535px;
+        }
+        
+        .silex-id-1501830966788-28 {
+            width: 250px;
+            min-height: 216px;
+            top: 466px;
+            left: 136px;
+        }
+        
+        .silex-id-1501830941768-27 {
+            min-height: 60px;
+            width: 464px;
+            top: 540px;
+            left: 402px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1501830941768-27 {
+                top: 0px;
+                left: 12px;
+                width: 421px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484659675199-32 {
+            min-height: 60px;
+            width: 450px;
+            top: 274px;
+            left: 64px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484659675199-32 {
+                top: 0px;
+                left: 12px;
+                width: 421px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1501831000674-29 {
+            min-height: 150px;
+            width: 544px;
+            top: 2px;
+            left: 260px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1501831000674-29 {
+                top: 279px;
+                left: 11px;
+                width: 423px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1501831678288-38 {
+            min-height: 60px;
+            width: 450px;
+            top: 799px;
+            left: 67px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1501831678288-38 {
+                top: 0px;
+                left: 12px;
+                width: 421px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1501831702385-39 {
+            min-height: 60px;
+            width: 464px;
+            top: 971px;
+            left: 429px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1501831702385-39 {
+                top: 0px;
+                left: 12px;
+                width: 421px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1501831796685-40 {
+            width: 201px;
+            min-height: 257px;
+            top: 683px;
+            left: 580px;
+        }
+        
+        .silex-id-1501831875392-41 {
+            width: 300px;
+            min-height: 200px;
+            top: 894px;
+            left: 119px;
+        }
+        
+        .silex-id-1484661251321-55 {
+            min-height: 100px;
+            top: 3478px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484661251321-55 {
+                top: 4669px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484661251321-54 {
+            min-height: 804px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484661251321-54 {
+                min-height: 582px;
+            }
+        }
+        
+        .silex-id-1501831411917-34 {
+            min-height: 156px;
+            width: 503px;
+            top: 411px;
+            left: 475px;
+            border-color: #000000;
+        }
+        
+        .silex-id-1501831411910-33 {
+            min-height: 365px;
+            width: 458px;
+            top: 24px;
+            left: 20px;
+            border-color: #000000;
+        }
+        
+        .silex-id-1501831411924-35 {
+            min-height: 63px;
+            width: 192px;
+            top: 414px;
+            left: 144px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #63b2d8;
+        }
+        
+        .silex-id-1501831483253-36 {
+            min-height: 63px;
+            width: 192px;
+            top: 489px;
+            left: 143px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #63b2d8;
+        }
+        
+        .silex-id-1484662129693-59 {
+            min-height: 100px;
+            top: 4282px;
+            left: 0px;
+            background-color: rgba(245, 245, 245, 1);
+            border-color: #000000;
+        }
+        
+        .silex-id-1484662129693-60 {
+            min-height: 477px;
+            background-color: transparent;
+        }
+        
+        .silex-id-1484662129694-62 {
+            min-height: 279px;
+            width: 450px;
+            top: 104px;
+            left: 99px;
+        }
+        
+        .silex-id-1484662129693-61 {
+            min-height: 189px;
+            width: 353px;
+            top: 106px;
+            left: 550px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484662129693-61 {
+                top: 279px;
+                left: 11px;
+                width: 423px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484662129694-63 {
+            min-height: 63px;
+            width: 192px;
+            top: 297px;
+            left: 550px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #63b2d8;
+        }
+        
+        .silex-id-1484662096460-58 {
+            min-height: 100px;
+            top: 4646px;
+            left: 0px;
+        }
+        
+        .silex-id-1484662096459-57 {
+            min-height: 415px;
+            background-color: transparent;
+        }
+        
+        .silex-id-1484662183052-64 {
+            min-height: 192px;
+            width: 515px;
+            background-color: transparent;
+            top: 120px;
+            left: 258px;
+        }
+        
+        .silex-id-1484662183053-66 {
+            min-height: 43px;
+            width: 158px;
+            top: 126px;
+            left: 81px;
+        }
+        
+        .silex-id-1484662183053-67 {
+            min-height: 43px;
+            width: 158px;
+            top: 126px;
+            left: 268px;
+        }
+        
+        .silex-id-1484662183053-65 {
+            min-height: 83px;
+            width: 494px;
+            top: 9px;
+            left: 11px;
+        }
+        
+        .silex-id-1478366450713-3 {
+            top: 5061px;
+            left: 0px;
+            background-color: transparent;
+        }
+        
+        .silex-id-1478366450713-2 {
+            min-height: 219px;
+            background-color: transparent;
+            width: 1200px;
+        }
+        
+        .silex-id-1442914737143-3 {
+            min-height: 75px;
+            width: 349px;
+            top: 56px;
+            left: 337px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1442914737143-3 {
+                top: 57px;
+                left: 11px;
+                width: 423px;
+                min-height: 105px;
+            }
+        }
+        
+        .silex-id-1501830725225-24 {
+            min-height: 30px;
+            width: 30px;
+            top: 500px;
+            left: 683px;
+        }
+    </style>
+    <title>Smart and Simple</title>
+    <script type="text/javascript" class="silex-json-styles">
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621032-2":{"min-height":"478px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"75px","width":"349px","top":"56px","left":"337px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-2":{"min-height":"219px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"5061px","left":"0px","background-color":"transparent"},"silex-id-1484575683599-3":{"min-height":"211px","width":"494px","top":"5px","left":"0px"},"silex-id-1484576338732-6":{"min-height":"305px","width":"515px","background-color":"transparent","top":"184px","left":"0px"},"silex-id-1484587463012-10":{"min-height":"331px","background-color":"transparent"},"silex-id-1484587463012-11":{"min-height":"100px","top":"669px","left":"0px"},"silex-id-1484589600542-14":{"min-height":"162px","width":"530px","top":"99px","left":"28px"},"silex-id-1484590211529-21":{"min-height":"485px","background-color":"transparent"},"silex-id-1484590211530-22":{"min-height":"100px","top":"1000px","left":"0px","background-color":"rgba(245,245,245,1)","border-color":"#000000"},"silex-id-1484655890366-24":{"min-height":"30px","width":"30px","top":"744px","left":"466px"},"silex-id-1484658276174-26":{"min-height":"331px","width":"473px","top":"67px","left":"489px"},"silex-id-1484658633790-28":{"min-height":"1160px","background-color":"transparent"},"silex-id-1484658633791-29":{"min-height":"100px","top":"1598px","left":"0px"},"silex-id-1484659675199-32":{"min-height":"60px","width":"450px","top":"274px","left":"64px","border-color":"#000000"},"silex-id-1484660025157-37":{"min-height":"681px","background-color":"transparent","top":"15px","left":"183px","width":"1000px"},"silex-id-1484660819078-52":{"min-height":"365px","width":"473px","top":"32px","left":"28px","border-color":"#000000"},"silex-id-1484661251321-54":{"min-height":"804px","background-color":"transparent"},"silex-id-1484661251321-55":{"min-height":"100px","top":"3478px","left":"0px"},"silex-id-1484662096459-57":{"min-height":"415px","background-color":"transparent"},"silex-id-1484662096460-58":{"min-height":"100px","top":"4646px","left":"0px"},"silex-id-1484662129693-59":{"min-height":"100px","top":"4282px","left":"0px","background-color":"rgba(245,245,245,1)","border-color":"#000000"},"silex-id-1484662129693-60":{"min-height":"477px","background-color":"transparent"},"silex-id-1484662129693-61":{"min-height":"189px","width":"353px","top":"106px","left":"550px"},"silex-id-1484662129694-62":{"min-height":"279px","width":"450px","top":"104px","left":"99px"},"silex-id-1484662129694-63":{"min-height":"63px","width":"192px","top":"297px","left":"550px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"},"silex-id-1484662183052-64":{"min-height":"192px","width":"515px","background-color":"transparent","top":"120px","left":"258px"},"silex-id-1484662183053-65":{"min-height":"83px","width":"494px","top":"9px","left":"11px"},"silex-id-1484662183053-66":{"min-height":"43px","width":"158px","top":"126px","left":"81px"},"silex-id-1484662183053-67":{"min-height":"43px","width":"158px","top":"126px","left":"268px"},"silex-id-1501830251095-16":{"width":"305px","min-height":"290px","top":"22px","left":"661px"},"silex-id-1501830434061-19":{"width":"","background-color":"","min-height":"787px"},"silex-id-1501830434063-20":{"background-image":"","top":"5px","left":"5px","background-color":"rgba(163,205,255,1)"},"silex-id-1501830652625-21":{"width":"712px","min-height":"670px","top":"45px","left":"320px"},"silex-id-1501830699625-23":{"min-height":"211px","width":"494px","top":"294px","left":"16px"},"silex-id-1501830725225-24":{"min-height":"30px","width":"30px","top":"500px","left":"683px"},"silex-id-1501830809918-25":{"width":"400px","min-height":"348px","top":"61px","left":"67px"},"silex-id-1501830903145-26":{"width":"400px","min-height":"217px","top":"194px","left":"535px"},"silex-id-1501830941768-27":{"min-height":"60px","width":"464px","top":"540px","left":"402px","border-color":"#000000"},"silex-id-1501830966788-28":{"width":"250px","min-height":"216px","top":"466px","left":"136px"},"silex-id-1501831000674-29":{"min-height":"150px","width":"544px","top":"2px","left":"260px"},"silex-id-1501831267092-30":{"min-height":"156px","width":"503px","top":"454px","left":"488px","border-color":"#000000"},"silex-id-1501831366562-32":{"min-height":"63px","width":"192px","top":"463px","left":"135px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"},"silex-id-1501831411910-33":{"min-height":"365px","width":"458px","top":"24px","left":"20px","border-color":"#000000"},"silex-id-1501831411917-34":{"min-height":"156px","width":"503px","top":"411px","left":"475px","border-color":"#000000"},"silex-id-1501831411924-35":{"min-height":"63px","width":"192px","top":"414px","left":"144px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"},"silex-id-1501831483253-36":{"min-height":"63px","width":"192px","top":"489px","left":"143px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"},"silex-id-1501831678288-38":{"min-height":"60px","width":"450px","top":"799px","left":"67px","border-color":"#000000"},"silex-id-1501831702385-39":{"min-height":"60px","width":"464px","top":"971px","left":"429px","border-color":"#000000"},"silex-id-1501831796685-40":{"width":"201px","min-height":"257px","top":"683px","left":"580px"},"silex-id-1501831875392-41":{"width":"300px","min-height":"200px","top":"894px","left":"119px"},"silex-id-1501831890737-42":{"min-height":"63px","width":"192px","top":"513px","left":"70px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"},"silex-id-1501831890744-43":{"min-height":"63px","width":"192px","top":"584px","left":"71px","border-width":"1px 1px 1px 1px ","border-style":"solid","border-radius":"6px 6px 6px 6px ","border-color":"#63b2d8"}},"mobile":{"silex-id-1484575683599-3":{"top":"16px","left":"11px","width":"401px","min-height":"267px"},"silex-id-1474394621032-2":{"min-height":"871px"},"silex-id-1484576338732-6":{"top":"354px","left":"11px","width":"423px","min-height":"372px"},"silex-id-1484589600542-14":{"top":"2px","left":"11px","width":"423px","min-height":"115px"},"silex-id-1484658276174-26":{"top":"279px","left":"11px","width":"423px","min-height":"189px"},"silex-id-1484659675199-32":{"top":"0px","left":"12px","width":"421px","min-height":"189px"},"silex-id-1484590211530-22":{"top":"1346px","left":"0px"},"silex-id-1484590211529-21":{"min-height":"670px"},"silex-id-1484658633791-29":{"top":"2016px","left":"0px"},"silex-id-1484658633790-28":{"min-height":"1425px"},"silex-id-1484661251321-55":{"top":"4669px","left":"0px"},"silex-id-1484661251321-54":{"min-height":"582px"},"silex-id-1484662129693-61":{"top":"279px","left":"11px","width":"423px","min-height":"189px"},"silex-id-1442914737143-3":{"top":"57px","left":"11px","width":"423px","min-height":"105px"},"silex-id-1484660025157-37":{"min-height":"1205px"},"silex-id-1501830699625-23":{"top":"16px","left":"11px","width":"401px","min-height":"267px"},"silex-id-1501830941768-27":{"top":"0px","left":"12px","width":"421px","min-height":"189px"},"silex-id-1501831000674-29":{"top":"279px","left":"11px","width":"423px","min-height":"189px"},"silex-id-1501831678288-38":{"top":"0px","left":"12px","width":"421px","min-height":"189px"},"silex-id-1501831702385-39":{"top":"0px","left":"12px","width":"421px","min-height":"189px"}},"componentData":{}}]
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport="">
+
+    <meta name="website-width" content="1000">
+    <style type="text/css" class="silex-style-settings">
+        .website-width {
+            width: 1000px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="description" content="A smart HTML template by @SilexLabs for your project">
+    <link href="../../../../../../../../assets/1484611390_android_phone.png" rel="shortcut icon">
+
+    <meta name="twitter:title" content="Smart &amp; Simple">
+    <meta name="og:title" content="Smart &amp; Simple">
+    <meta name="twitter:description" content="This is a nice web template for my mobile app">
+    <meta name="og:description" content="This is a nice web template for my mobile app">
+    <meta name="twitter:site" content="silexlabs">
+    <meta name="publicationPath" content="/api/1.0/github/exec/put///silex-templates/wip/smart-simple">
+
+    <meta name="twitter:card" content="summary">
+
+    <meta name="twitter:image" content="http://smart-simple.netlify.com/smart-simple/screenshot.png">
+    <meta name="og:image" content="http://smart-simple.netlify.com/smart-simple/screenshot.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style id="current-page-style">
+        .page-page-1 {
+            display: inherit;
+        }
+    </style>
+    <!-- Silex HEAD tag do not remove -->
+    <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.2.0/scrollreveal.min.js"></script>
+    <!-- End of Silex HEAD tag do not remove -->
+</head>
+
+<body data-silex-id="body-initial" class="body-initial enable-mobile silex-runtime" data-silex-type="container">
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1501830434063-20 section-element" data-silex-id="silex-id-1501830434063-20">
+        <div data-silex-type="container" class="editable-style silex-id-1501830434061-19 container-element silex-element-content silex-container-content website-width prevent-draggable" data-silex-id="silex-id-1501830434061-19">
+            <div data-silex-type="image" class="editable-style silex-id-1501830652625-21 image-element" data-silex-id="silex-id-1501830652625-21"><img src="../images/tarawa_map.jpg" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1501830699625-23" data-silex-id="silex-id-1501830699625-23">
+                <div class="silex-element-content normal">
+                    <h1 class="heading1">
+                        <font color="#ffffff">Kiribati Trip</font>
+                    </h1>
+                    <div>
+                        <p class="normal">
+                            <font color="#ffffff">We're going to the Pacific, and we need some help.</font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="image" class="editable-style silex-id-1484655890366-24 image-element from-bottom scroll-down hero-bottom hide-on-mobile" data-silex-id="silex-id-1484655890366-24"><img src="../../../../../../../../libs/templates/silex-templates/smart-simple/assets/scroll.png" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element from-right page-link-active silex-id-1501831890737-42" data-silex-id="silex-id-1501831890737-42" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <font color="#6fa8dc"><br></font>
+                    <div style="text-align: center;"><span style="font-weight: lighter;"><font color="#073763">PayPal Donate</font></span></div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right page-link-active silex-id-1501831890744-43" data-silex-id="silex-id-1501831890744-43" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <div style="text-align: center;"><span style="color: rgb(111, 168, 220);"><br></span></div>
+
+                    <div style="text-align: center;">
+                        <font color="#073763"><span style="font-weight: lighter;">Contact for&nbsp;</span><span style="font-weight: lighter;">Bank Tx</span></font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="silex-pages">
+
+        <a id="page-page-1" data-silex-type="page" class="page-element page-link-active">Page 1</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484587463012-11 section-element fold" data-silex-id="silex-id-1484587463012-11">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484587463012-10 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484587463012-10">
+
+
+
+
+
+
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1501830251095-16 image-element" data-silex-id="silex-id-1501830251095-16"><img src="../images/family_sm.jpg" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style silex-id-1484589600542-14 text-element" data-silex-id="silex-id-1484589600542-14">
+                <div class="silex-element-content normal">
+                    <p class="normal">
+                        <font size="4">As most of our friends, family, acquaintances, random strangers and (hopefully) the Tungaru Central Hospital are aware, The van der Merwe family is heading to the capital of Kiribati, Tarawa, to do some volunteer work. &nbsp;We
+                            are going for 3 months, leaving on the 20th August.</font>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484590211530-22 section-element" data-silex-id="silex-id-1484590211530-22">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484590211529-21 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484590211529-21">
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1501830809918-25 image-element" data-silex-id="silex-id-1501830809918-25"><img src="../images/kiribati%20hospital.gif" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484658276174-26 from-right" data-silex-id="silex-id-1484658276174-26">
+                <div class="silex-element-content normal">
+                    <h2 class="heading2">Tungaru Central Hospital</h2>
+                    <div><span style="line-height: 1.5;"><div>Claire will be using her paeds nursing experience to help train the local nursing staff. &nbsp;The trip is organised by AVID and the host organisation is the xxx. &nbsp;</div><div><br></div><div>We have asked the hospital if there is anything that they require, and they have requested some resuscitation mannequins and laryngoscopes. &nbsp;We are going to try and get three mannequins</div></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484658633791-29 section-element" data-silex-id="silex-id-1484658633791-29">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484658633790-28 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484658633790-28">
+
+
+
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1501830903145-26 image-element" data-silex-id="silex-id-1501830903145-26"><img src="../images/child%20mannequin.jpg" class="silex-element-content"></div>
+            <div data-silex-type="image" class="editable-style silex-id-1501830966788-28 image-element" data-silex-id="silex-id-1501830966788-28"><img src="../images/neonate.jpg" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501830941768-27" data-silex-id="silex-id-1501830941768-27">
+                <div class="silex-element-content normal">
+                    <p class="normal">
+                        <font size="4">a neonate mannequin, to practice ventilation, CPR, suction, checking heart and umbilical pulse, etc</font>
+                    </p>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484659675199-32 from-right" data-silex-id="silex-id-1484659675199-32">
+                <div class="silex-element-content normal">
+                    <p class="normal" style="text-align: right;">
+                        <font size="4">A combined resuss and intubation child mannequin</font>
+                    </p>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501831000674-29" data-silex-id="silex-id-1501831000674-29">
+                <div class="silex-element-content normal">
+                    <h1 class="heading1">
+                        <font size="7">What we want to give</font>
+                    </h1>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501831678288-38" data-silex-id="silex-id-1501831678288-38">
+                <div class="silex-element-content normal">
+                    <p class="normal" style="text-align: right;">
+                        <font size="4">Laryngoscope equipment</font>
+                    </p>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501831702385-39" data-silex-id="silex-id-1501831702385-39">
+                <div class="silex-element-content normal">
+                    <p class="normal">
+                        <font size="4">Infant mannequin</font>
+                    </p>
+                </div>
+            </div>
+            <div data-silex-type="image" class="editable-style silex-id-1501831796685-40 image-element" data-silex-id="silex-id-1501831796685-40"><img src="../images/laryngoscope-blades-l.jpg" class="silex-element-content"></div>
+            <div data-silex-type="image" class="editable-style silex-id-1501831875392-41 image-element" data-silex-id="silex-id-1501831875392-41"><img src="../images/Infant-CPR-Class-3.jpg" class="silex-element-content"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484661251321-55 section-element" data-silex-id="silex-id-1484661251321-55">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484661251321-54 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484661251321-54">
+
+
+
+
+            <div data-silex-type="text" class="editable-style text-element from-left silex-id-1501831411917-34" data-silex-id="silex-id-1501831411917-34">
+                <div class="silex-element-content normal">
+                    <p class="normal">
+                        <font size="4">You can donate by either contacting me and transferring to our bank account, or you can send via Paypal. &nbsp;Note that there are some extra charges if you use your credit card (something like 2.9% + 30c).</font>
+                    </p>
+                    <p></p>
+                    <div>
+                        <font color="#ffffff">
+                        </font>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-silex-type="text" class="editable-style text-element from-left silex-id-1501831411910-33" data-silex-id="silex-id-1501831411910-33">
+                <div class="silex-element-content normal">
+                    <p class="normal">
+                        <font size="4">The majority of Claire’s trip is funded, but Eli and Leigh are not, which is something we are personally funding. None of your funds will go towards Eli or Leigh’s expenses.We are asking for you to help us pay for some of the above,
+                            expensive equipment that will be directly donated to the hospital. &nbsp;</font>
+                    </p>
+                    <div>
+                        <font size="4"><br></font>
+                    </div>
+                    <div>
+                        <font size="4">The two mannequins add up to &gt;$2000 and we also want to be able to purchase some other supplies.</font>
+                    </div>
+                    <div>
+                        <font size="4"><br></font>
+                    </div>
+                    <font size="4">We'll be buying these regardless, so any help would be greatly appreciated.&nbsp;</font>
+                    <p></p>
+                    <div>
+                        <font color="#ffffff">
+                        </font>
+                    </div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501831411924-35 page-link-active" data-silex-id="silex-id-1501831411924-35" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <font color="#6fa8dc"><br></font>
+                    <div style="text-align: center;"><span style="font-weight: lighter;"><font color="#6fa8dc">PayPal Donate</font></span></div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element from-right silex-id-1501831483253-36 page-link-active" data-silex-id="silex-id-1501831483253-36" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <div style="text-align: center;"><span style="color: rgb(111, 168, 220);"><br></span></div>
+
+                    <div style="text-align: center;"><span style="font-weight: lighter;"><font color="#6fa8dc">Contact for&nbsp;</font></span><span style="color: rgb(111, 168, 220); font-weight: lighter;">Bank Tx</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style section-element silex-id-1484662129693-59" data-silex-id="silex-id-1484662129693-59">
+
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-container-content container-element prevent-draggable silex-id-1484662129693-60" data-silex-id="silex-id-1484662129693-60">
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style image-element silex-id-1484662129694-62 from-left" data-silex-id="silex-id-1484662129694-62"><img src="../../../../../../../../libs/templates/silex-templates/smart-simple/assets/piwiklaptop-small.png" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484662129693-61 from-right" data-silex-id="silex-id-1484662129693-61">
+                <div class="silex-element-content normal">
+                    <h2 class="heading2">A Landing Page<br><span style="line-height: 1.5;">For Your App</span></h2>
+                    <div>You can customize this web page with <a href="http://www.silex.me/">Silex website builder</a>.</div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484662129694-63 from-right page-link-active" data-silex-id="silex-id-1484662129694-63" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <font color="#6fa8dc"><br></font>
+                    <div style="text-align: center;"><span style="font-weight: lighter;"><font color="#6fa8dc">Read more</font></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484662096460-58 section-element bg-grad2" data-silex-id="silex-id-1484662096460-58">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484662096459-57 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484662096459-57">
+            <div data-silex-type="container" class="editable-style container-element silex-id-1484662183052-64" data-silex-id="silex-id-1484662183052-64">
+
+
+
+
+                <div data-silex-type="image" class="editable-style image-element silex-id-1484662183053-66 from-left" data-silex-id="silex-id-1484662183053-66"><img src="../../../../../../../../libs/templates/silex-templates/smart-simple/assets/app-store.png" class="silex-element-content"></div>
+                <div data-silex-type="image" class="editable-style image-element silex-id-1484662183053-67 from-right" data-silex-id="silex-id-1484662183053-67"><img src="../../../../../../../../libs/templates/silex-templates/smart-simple/assets/android-market.png" class="silex-element-content"></div>
+                <div data-silex-type="text" class="editable-style text-element silex-id-1484662183053-65" data-silex-id="silex-id-1484662183053-65">
+                    <div class="silex-element-content normal">
+                        <h2 style="text-align: center;">
+                            <font color="#ffffff" class="heading2">Download The App</font>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366450713-3 section-element" data-silex-id="silex-id-1478366450713-3" style="">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366450713-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366450713-2">
+
+            <div data-silex-id="silex-id-1442914737143-3" class="editable-style silex-id-1442914737143-3 text-element" data-silex-type="text">
+                <div class="silex-element-content normal">
+                    <br>
+                    <div style="text-align: center;"><a href="//www.silex.me/">Powered by Silex</a></div>
+                    <div style="text-align: center;"><span style="font-weight: lighter;">Released for free under the&nbsp;</span>Creative Commons License.</div>
+                    <div style="text-align: center;">Images: <a href="http://unsplash.com">Unsplash</a>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="image" class="editable-style image-element from-bottom scroll-down hero-bottom hide-on-mobile silex-id-1501830725225-24" data-silex-id="silex-id-1501830725225-24"><img src="../../../../../../../../libs/templates/silex-templates/smart-simple/assets/scroll.png" class="silex-element-content"></div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
